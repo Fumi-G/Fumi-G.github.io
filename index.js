@@ -7,8 +7,8 @@ sendButton.addEventListener("click", () => {
 
   let imgElement = new Image();
   imgElement.src = imgurl;
-  imgElement.style.height = "360px";
-  imgElement.style.width = "475px";
+  imgElement.style.height = "475px";
+  imgElement.style.width = "950px";
   document.body.append(imgElement);
   
 });
