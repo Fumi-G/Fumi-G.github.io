@@ -45,5 +45,34 @@ sendButton.addEventListener("click", () => {
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
-}
+};
+
+document.getElementById("fetchAll").addEventListener("click", async () => {
+  console.log("Fetch の並列実行 (Promise.all の利用)");
+
+  // 並列処理するプロミスの配列を作る (この時点で非同期処理は順次開始)
+  const promiseArray = [];
+  const dataArray = [];
+  dataList.forEach(async (dataItemUrl) => {
+    // API アクセスだけでレスポンスデータを捨てて良いなら:
+    // promiseArray.push(fetchJsonData(dataItemUrl));
+
+    // 「データをフェッチし結果を配列に収めるプロミス」を配列に追加する
+    // then でチェインを繋いた結果がプロミスであることに注意
+    promiseArray.push(
+      fetchJsonData(dataItemUrl).then((data) => {
+        console.log(data);
+        dataArray.push(data);
+      })
+      // これはダメ: dataArray.push(await fetchJsonData(dataItemUrl))
+      // ここで await 使うとその時点で解決してしまいプロミスの配列にならない
+    );
+  });
+  promiseArray.push(delay(delayTime));
+
+  // Promise.all でなく Promise.race を使う場合と比較してみると良い
+  await Promise.all(promiseArray);
+  console.log(`全てのデータ取得完了かつ ${delayTime} ms 以上経過`);
+  console.log(dataArray);
+});
 
