@@ -47,7 +47,7 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 };
 
-document.getElementById("fetchAll").addEventListener("click", async () => {
+document.getElementById("sendRequest").addEventListener("click", async () => {
   console.log("Fetch の並列実行 (Promise.all の利用)");
 
   // 並列処理するプロミスの配列を作る (この時点で非同期処理は順次開始)
@@ -72,7 +72,7 @@ document.getElementById("fetchAll").addEventListener("click", async () => {
 
   // Promise.all でなく Promise.race を使う場合と比較してみると良い
   await Promise.all(promiseArray);
-  console.log(`全てのデータ取得完了かつ ${delayTime} ms 以上経過`);
+  console.log(`全てのデータ取得完了`);
   console.log(dataArray);
 });
 
