@@ -13,8 +13,6 @@ async function fetchJsonData(url) {
   };
   // fetch はリソースを取得すると解決するプロミスを返す関数
   const response = await fetch(url, options);
-  // レスポンスは文字列では無く ReadbleStream であることに注意
-  // text() や json() メソッドでレスポンスボディを読み込む
   const jsonData = await response.json();
   // オブジェクトを return しているが非同期関数であるため
   // 解決時に jsonData が渡されるプロミスを返していることに注意
