@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   console.log(`${dataListUrl}:`, dataList);
 });
 
-
+/*
 let sendButton = document.getElementById("sendRequest");
 
 sendButton.addEventListener("click", () => {
@@ -42,6 +42,7 @@ sendButton.addEventListener("click", () => {
   document.body.append(imgElement);
   
 });
+*/
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
