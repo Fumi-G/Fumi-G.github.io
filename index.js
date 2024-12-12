@@ -69,7 +69,7 @@ document.getElementById("sendRequest").addEventListener("click", async () => {
       // ここで await 使うとその時点で解決してしまいプロミスの配列にならない
     );
   });
-  promiseArray.push(delay(delayTime));
+  promiseArray.push();
 
   // Promise.all でなく Promise.race を使う場合と比較してみると良い
   await Promise.all(promiseArray);
