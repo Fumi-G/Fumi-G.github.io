@@ -2,6 +2,7 @@
 
 const dataListUrl = "/data/list.json";
 let dataList;
+const sozai_max = 10;
 
 // 指定 URL の JSON データをフェッチするプロミスを返す非同期関数
 async function fetchJsonData(url) {
@@ -42,6 +43,7 @@ sendButton.addEventListener("click", () => {
 });
 */
 
+// 乱数生成
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 };
@@ -63,8 +65,6 @@ document.getElementById("sendRequest").addEventListener("click", async () => {
         console.log(data);
         dataArray.push(data);
       })
-      // これはダメ: dataArray.push(await fetchJsonData(dataItemUrl))
-      // ここで await 使うとその時点で解決してしまいプロミスの配列にならない
     );
   });
   promiseArray.push();
@@ -73,5 +73,15 @@ document.getElementById("sendRequest").addEventListener("click", async () => {
   await Promise.all(promiseArray);
   console.log(`全てのデータ取得完了`);
   console.log(dataArray);
+
+  for(i=0; i>sozai_max; i++){
+
+    let imgElement = new Image();
+    imgElement.src = dataArray[i].img;
+    imgElement.style.height = "500px";
+    imgElement.style.width = "500px";
+    document.body.append(imgElement);
+
+  }
 });
 
