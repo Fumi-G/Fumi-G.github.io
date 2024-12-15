@@ -81,7 +81,8 @@ document.getElementById("sendRequest").addEventListener("click", async () => {
     imgElement.style.height = "500px";
     imgElement.style.width = "500px";
     document.body.append(imgElement);
-
+    console.log(`dataArray:`,dataArray[i]);
   }
+  
 });
 
