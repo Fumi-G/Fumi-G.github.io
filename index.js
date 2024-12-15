@@ -78,8 +78,8 @@ document.getElementById("sendRequest").addEventListener("click", async () => {
 
     let imgElement = new Image();
     imgElement.src = dataArray[i].img;
-    imgElement.style.height = "500px";
-    imgElement.style.width = "500px";
+    imgElement.style.height = "300px";
+    imgElement.style.width = "300px";
     document.body.append(imgElement);
     console.log(`dataArray:`,dataArray[i]);
   }
