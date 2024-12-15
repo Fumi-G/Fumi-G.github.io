@@ -74,7 +74,7 @@ document.getElementById("sendRequest").addEventListener("click", async () => {
   console.log(`全てのデータ取得完了`);
   console.log(dataArray);
 
-  for(i=0; i>sozai_max; i++){
+  for(let i=0; i < sozai_max; i++ ){
 
     let imgElement = new Image();
     imgElement.src = dataArray[i].img;
