@@ -55,7 +55,7 @@ async function loadVege() {
 }
 
 // 完成料理画像をランダムに表示
-function showRandomDish(data) {
+async function showRandomDish(data) {
 
   // 野菜画像はいったん非表示
   hideVege();
@@ -64,6 +64,7 @@ function showRandomDish(data) {
 
   // 雲を表示ー削除
   showhideCloud();
+  await sleep(500);
 
   // 完成料理数の範囲内でランダムなIDを生成
   const randomIndex = Math.floor(Math.random() * data.dishes.length);
@@ -105,7 +106,7 @@ async function showhideCloud() {
   await sleep(500);
 
   effectContainer.innerHTML = '';
-  
+
 }
 
 function sleep(ms) {
