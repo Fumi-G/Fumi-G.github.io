@@ -29,13 +29,18 @@ window.addEventListener("DOMContentLoaded", async () => {
   // 最初にデータリストだけ取得しておく
   dataList = await fetchJsonData(dataListUrl);
   console.log(`${dataListUrl}:`, dataList);
-    // 初期化
-    loadVege();
+  // データリストに記載されたjsonファイルを取得する必要ある
+  for(const file of dataList) {
+    VegeList = await fetchJsonData(file.image);
+    console.log("VegeList:",VegeList);
+  }
+  // 初期化
+  loadVege();
 });
 
 // JSONデータを取得して素材画像を表示
 async function loadVege() {
-  for (const file of dataList) {
+  for (const file of VegeList) {
     //const response = await fetch(file);
     //const data = await response.json();
       // 素材画像を作成して表示
