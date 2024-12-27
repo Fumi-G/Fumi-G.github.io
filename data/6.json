@@ -1,6 +1,11 @@
 {
   "id"  : "6",
-  "data": "nasu",
-  "max" : "0",
-  "img" : "img/sozai/nasu.png"
+  "name": "nasu",
+  "image" : "img/sozai/nasu.png",
+  "dishes" : [
+    "img/dishes/nasu/food_ma-bo-nasu.png",
+    "img/dishes/nasu/food_nasu_nibitashi.png",
+    "img/dishes/nasu/food_nasu_yakinasu.png"
+  ]
+  
 }

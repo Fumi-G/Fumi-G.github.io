@@ -1,6 +1,11 @@
 {
   "id"  : "8",
-  "data": "hourensou",
-  "max" : "0",
-  "img" : "img/sozai/hourensou.png"
+  "name": "hourensou",
+  "image" : "img/sozai/hourensou.png",
+  "dishes" : [
+    "img/dishes/hourensou/food_hourensou_gomaae.png",
+    "img/dishes/hourensou/food_hourensou_ohitashi.png",
+    "img/dishes/hourensou/food_ramen_iekei_uzura.png",
+    "img/dishes/hourensou/food_sansyokudon.png"
+  ]
 }

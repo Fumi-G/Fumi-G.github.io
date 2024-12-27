@@ -1,6 +1,9 @@
 {
   "id"  : "5",
-  "data": "kabocha",
-  "max" : "0",
-  "img" : "img/sozai/kabocha.png"
+  "name": "kabocha",
+  "image" : "img/sozai/kabocha.png",
+  "dishes" : [
+    "img/dishes/kabocha/food_kabocha_guratan.png",
+    "img/dishes/kabocha/food_korokke_kabocha.png"
+  ]
 }

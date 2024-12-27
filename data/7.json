@@ -1,6 +1,12 @@
 {
   "id"  : "7",
-  "data": "moyashi",
-  "max" : "0",
-  "img" : "img/sozai/moyashi.png"
+  "name": "moyashi",
+  "image" : "img/sozai/moyashi.png",
+  "dishes" : [
+    "img/dishes/moyashi/food_moyashi_itame.png",
+    "img/dishes/moyashi/food_moyashi_niku_itame.png",
+    "img/dishes/moyashi/ramen_miso.png",
+    "img/dishes/moyashi/ramen_moyashi.png"
+  ]
+
 }

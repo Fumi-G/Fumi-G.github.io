@@ -1,8 +1,11 @@
-
+// nakonako3 program
 
 const dataListUrl = "/data/list.json";
 let dataList;
 const sozai_max = 10;
+// 素材画像を表示するコンテナ
+const vegeContainer = document.getElementById('vege-container');
+const dishContainer = document.getElementById('dish-container');
 
 // 指定 URL の JSON データをフェッチするプロミスを返す非同期関数
 async function fetchJsonData(url) {
@@ -28,61 +31,37 @@ window.addEventListener("DOMContentLoaded", async () => {
   console.log(`${dataListUrl}:`, dataList);
 });
 
-/*
-let sendButton = document.getElementById("sendRequest");
-
-sendButton.addEventListener("click", () => {
-
-  let imgurl = "https://m.media-amazon.com/images/I/61Xdn8K7JgL._AC_SL1000_.jpg";
-  let imgElement = new Image();
-  imgElement.src = imgurl;
-  imgElement.style.height = "719px";
-  imgElement.style.width = "948px";
-  document.body.append(imgElement);
-  
-});
-*/
-
-// 乱数生成
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-};
-
-document.getElementById("sendRequest").addEventListener("click", async () => {
-  console.log("Fetch の並列実行 (Promise.all の利用)");
-
-  // 並列処理するプロミスの配列を作る (この時点で非同期処理は順次開始)
-  const promiseArray = [];
-  const dataArray = [];
-  dataList.forEach(async (dataItemUrl) => {
-    // API アクセスだけでレスポンスデータを捨てて良いなら:
-    // promiseArray.push(fetchJsonData(dataItemUrl));
-
-    // 「データをフェッチし結果を配列に収めるプロミス」を配列に追加する
-    // then でチェインを繋いた結果がプロミスであることに注意
-    promiseArray.push(
-      fetchJsonData(dataItemUrl).then((data) => {
-        console.log(data);
-        dataArray.push(data);
-      })
-    );
-  });
-  promiseArray.push();
-
-  // Promise.all でなく Promise.race を使う場合と比較してみると良い
-  await Promise.all(promiseArray);
-  console.log(`全てのデータ取得完了`);
-  console.log(dataArray);
-
-  for(let i=0; i < sozai_max; i++ ){
-
-    let imgElement = new Image();
-    imgElement.src = dataArray[i].img;
-    imgElement.style.height = "300px";
-    imgElement.style.width = "300px";
-    document.body.append(imgElement);
-    console.log(`dataArray:`,dataArray[i]);
+// JSONデータを取得して素材画像を表示
+async function loadVege() {
+  for (const file of dataList) {
+    //const response = await fetch(file);
+    //const data = await response.json();
+      // 素材画像を作成して表示
+    const img = document.createElement('img');
+    img.src = dataList.image; // 素材画像のリンク
+    img.alt = dataList.name; // 野菜の名前
+    img.style.cursor = 'pointer'; // クリック可能にする
+    img.style.margin = '10px';
+    img.addEventListener('click', () => showRandomDish(dataList)); // クリックイベント追加
+    vegetableContainer.appendChild(img);
   }
-  
-});
+}
 
+// 完成料理画像をランダムに表示
+function showRandomDish(data) {
+  // dishContainerをクリア
+  dishContainer.innerHTML = '';
+
+  // 完成料理数の範囲内でランダムなIDを生成
+  const randomIndex = Math.floor(Math.random() * data.dishes.length);
+
+  // 完成料理画像を表示
+  const dishImg = document.createElement('img');
+  dishImg.src = data.dishes[randomIndex]; // 完成料理画像のリンク
+  dishImg.alt = `完成料理 (${data.name})`;
+  dishImg.style.margin = '10px';
+  dishContainer.appendChild(dishImg);
+}
+
+  // 初期化
+  loadVege();

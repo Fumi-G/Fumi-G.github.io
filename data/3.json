@@ -1,6 +1,11 @@
 {
   "id"  : "3",
-  "data": "kyuuri",
-  "max" : "0",
-  "img" : "img/sozai/kyuuri.png"
+  "name": "kyuuri",
+  "image" : "img/sozai/kyuuri.png",
+  "dishes" : [
+    "img/dishes/kyuuri/food_kyuuri_bou.png",
+    "img/dishes/kyuuri/food_salad_macaroni.png",
+    "img/dishes/kyuuri/food_tsukemono_kyuuri.png",
+    "img/dishes/kyuuri/food_vegetable_sald.png"
+  ]
 }

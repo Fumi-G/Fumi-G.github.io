@@ -1,6 +1,15 @@
 {
   "id"  : "0",
-  "data": "tomato",
-  "max" : "0",
-  "img" : "img/sozai/tomato.png"
+  "name": "tomato",
+  "image" : "img/sozai/tomato.png",
+  "dishes" : [
+    "img/dishes/tomato/food_caprese.png",
+    "img/dishes/tomato/food_risotto_tomato.png",
+    "img/dishes/tomato/food_tacorice.png",
+    "img/dishes/tomato/food_tacos.png",
+    "img/dishes/tomato/food_vegetable_sald.png",
+    "img/dishes/tomato/salad_reisyabu.png",
+    "img/dishes/tomato/soup_minestrone.png",
+    "img/dishes/tomato/tomato_nabe.png"
+  ]
 }

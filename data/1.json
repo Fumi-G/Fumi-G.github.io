@@ -1,6 +1,12 @@
 {
   "id"  : "1",
-  "data": "jagaimo",
-  "max" : "0",
-  "img" : "img/sozai/jagaimo.png"
+  "name": "jagaimo",
+  "image" : "img/sozai/jagaimo.png",
+  "dishes" : [
+    "img/dishes/jagaimo/food_beefstew.png",
+    "img/dishes/jagaimo/food_creamstew.png",
+    "img/dishes/jagaimo/food_curryruce.png",
+    "img/dishes/jagaimo/food_korokke.png",
+    "img/dishes/jagaimo/omatsuri_jagabata.png"
+  ]
 }

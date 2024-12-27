@@ -1,6 +1,10 @@
 {
   "id"  : "2",
-  "data": "tamanegi",
-  "max" : "0",
-  "img" : "img/sozai/tamanegi.png"
+  "name": "tamanegi",
+  "image" : "img/sozai/tamanegi.png",
+  "dishes" : [
+    "img/dishes/tamanegi/food_fried_onion.png",
+    "img/dishes/tamanegi/food_nanbanduke_tori.png",
+    "img/dishes/tamanegi/food_thai_somtom_salad.png"
+  ]
 }

@@ -1,6 +1,14 @@
 {
   "id"  : "4",
-  "data": "kyabetsu",
-  "max" : "0",
-  "img" : "img/sozai/kyabetsu.png"
+  "name": "kyabetsu",
+  "image" : "img/sozai/kyabetsu.png",
+  "dishes" : [
+    "img/dishes/kyabetsu/food_hoikoro.png",
+    "img/dishes/kyabetsu/food_okonomiyaki_kyabetsuyaki_decoration.png",
+    "img/dishes/kyabetsu/food_rolled_cabbage.png",
+    "img/dishes/kyabetsu/food_syougayaki.png",
+    "img/dishes/kyabetsu/food_tacorice.png",
+    "img/dishes/kyabetsu/food_tonkatsu.png",
+    "img/dishes/kyabetsu/vegetable_coleslaw_salad.png"
+  ]
 }

@@ -1,6 +1,11 @@
 {
   "id"  : "9",
-  "data": "daikon",
-  "max" : "0",
-  "img" : "img/sozai/daikon.png"
+  "name": "daikon",
+  "image" : "img/sozai/daikon.png",
+  "dishes" : [
+    "img/dishes/daikon/food_buridaikon.png",
+    "img/dishes/daikon/food_kimuchi_kakuteki.png",
+    "img/dishes/daikon/food_kiriboshi_daikon.png",
+    "img/dishes/daikon/oden.png"
+  ]
 }
