@@ -34,6 +34,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 document.getElementById("sendRequest").addEventListener("click" , async () =>{
   // 初期化
+  dishContainer.innerHTML = '';
   loadVege();
 });
 
@@ -94,11 +95,12 @@ function showhideCloud() {
   img.style.opacity = 1; // 透明度を1にして表示
   }, 100); // 遅延を少し入れることでスムーズに開始
 
+  /*
   // フェードアウトをトリガー
   setTimeout(() => {
     img.style.opacity = 0; // 透明度を0にして非表示
     }, 100); // 遅延を少し入れることでスムーズに開始
 
   effectContainer.innerHTML = '';
-
+*/
 }
