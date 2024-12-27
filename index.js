@@ -45,7 +45,7 @@ async function loadVege() {
     img.style.cursor = 'pointer'; // クリック可能にする
     img.style.margin = '10px';
     img.addEventListener('click', () => showRandomDish(dataList)); // クリックイベント追加
-    vegetableContainer.appendChild(img);
+    vegeContainer.appendChild(img);
   }
 }
 
