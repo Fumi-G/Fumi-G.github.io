@@ -30,26 +30,26 @@ window.addEventListener("DOMContentLoaded", async () => {
   dataList = await fetchJsonData(dataListUrl);
   console.log(`${dataListUrl}:`, dataList);
   // データリストに記載されたjsonファイルを取得する必要ある
-  for(const file of dataList) {
-    VegeList = await fetchJsonData(dataList[file]);
-    console.log("VegeList:",VegeList);
-  }
+//  for(const file of dataList) {
+//    VegeList = await fetchJsonData(dataList[file]);
+//    console.log("VegeList:",VegeList);
+//  }
   // 初期化
   loadVege();
 });
 
 // JSONデータを取得して素材画像を表示
 async function loadVege() {
-  for (const file of VegeList) {
-    //const response = await fetch(file);
-    //const data = await response.json();
+  for (const file of dataList) {
+    const response = await fetch(file);
+    const data = await response.json();
       // 素材画像を作成して表示
     const img = document.createElement('img');
-    img.src = dataList.image; // 素材画像のリンク
-    img.alt = dataList.name; // 野菜の名前
+    img.src = data.image; // 素材画像のリンク
+    img.alt = data.name; // 野菜の名前
     img.style.cursor = 'pointer'; // クリック可能にする
     img.style.margin = '10px';
-    img.addEventListener('click', () => showRandomDish(dataList)); // クリックイベント追加
+    img.addEventListener('click', () => showRandomDish(data)); // クリックイベント追加
     vegeContainer.appendChild(img);
   }
 }
