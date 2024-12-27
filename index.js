@@ -56,6 +56,9 @@ async function loadVege() {
 
 // 完成料理画像をランダムに表示
 function showRandomDish(data) {
+  
+  hideVege();
+
   // dishContainerをクリア
   dishContainer.innerHTML = '';
 
@@ -68,6 +71,10 @@ function showRandomDish(data) {
   dishImg.alt = `完成料理 (${data.name})`;
   dishImg.style.margin = '10px';
   dishContainer.appendChild(dishImg);
+}
+
+function hideVege() {
+    vegeContainer.innerHTML = '';
 }
 
 
