@@ -29,6 +29,8 @@ window.addEventListener("DOMContentLoaded", async () => {
   // 最初にデータリストだけ取得しておく
   dataList = await fetchJsonData(dataListUrl);
   console.log(`${dataListUrl}:`, dataList);
+    // 初期化
+    loadVege();
 });
 
 // JSONデータを取得して素材画像を表示
@@ -63,5 +65,4 @@ function showRandomDish(data) {
   dishContainer.appendChild(dishImg);
 }
 
-  // 初期化
-  loadVege();
+
