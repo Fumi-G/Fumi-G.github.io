@@ -5,6 +5,7 @@ let dataList;
 const sozai_max = 10;
 // 素材画像を表示するコンテナ
 const vegeContainer = document.getElementById('vege-container');
+const effectContainer = document.getElementById('effect-container');
 const dishContainer = document.getElementById('dish-container');
 
 // 指定 URL の JSON データをフェッチするプロミスを返す非同期関数
@@ -29,11 +30,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   // 最初にデータリストだけ取得しておく
   dataList = await fetchJsonData(dataListUrl);
   console.log(`${dataListUrl}:`, dataList);
-  // データリストに記載されたjsonファイルを取得する必要ある
-//  for(const file of dataList) {
-//    VegeList = await fetchJsonData(dataList[file]);
-//    console.log("VegeList:",VegeList);
-//  }
+});
+
+document.getElementById("sendRequest").addEventListener("click" , async () =>{
   // 初期化
   loadVege();
 });
@@ -56,11 +55,14 @@ async function loadVege() {
 
 // 完成料理画像をランダムに表示
 function showRandomDish(data) {
-  
-  hideVege();
 
+  // 野菜画像はいったん非表示
+  hideVege();
   // dishContainerをクリア
   dishContainer.innerHTML = '';
+
+  // 雲を表示ー削除
+  showhideCloud();
 
   // 完成料理数の範囲内でランダムなIDを生成
   const randomIndex = Math.floor(Math.random() * data.dishes.length);
@@ -77,4 +79,26 @@ function hideVege() {
     vegeContainer.innerHTML = '';
 }
 
+function showhideCloud() {
+  const img = document.createElement('img');
+  img.src = "img/effect/kumo.png"
+  img.style.opacity = 0; // 初期状態では透明
+  img.style.transition = "opacity 1s ease-in-out"; // フェードインアニメーション
+  img.style.display = "block"; // 必要なら明示的に設定
+  img.style.width = "100%"; // 必要に応じてサイズ指定
+  img.style.height = "auto";
+  effectContainer.appendChild(img);
 
+  // フェードインをトリガー
+  setTimeout(() => {
+  img.style.opacity = 1; // 透明度を1にして表示
+  }, 100); // 遅延を少し入れることでスムーズに開始
+
+  // フェードアウトをトリガー
+  setTimeout(() => {
+    img.style.opacity = 0; // 透明度を0にして非表示
+    }, 100); // 遅延を少し入れることでスムーズに開始
+
+  effectContainer.innerHTML = '';
+
+}
