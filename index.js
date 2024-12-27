@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   console.log(`${dataListUrl}:`, dataList);
   // データリストに記載されたjsonファイルを取得する必要ある
   for(const file of dataList) {
-    VegeList = await fetchJsonData(file.image);
+    VegeList = await fetchJsonData(dataList[file]);
     console.log("VegeList:",VegeList);
   }
   // 初期化
